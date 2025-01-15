@@ -39,12 +39,12 @@ create table inventory (
 
 -- sales 테이블 생성
 create table sales (
-	sale_id int auto_increment primary key,
+	sale_id int auto_increment primary key, -- 판매의 고유 ID
     order_id int,
-    foreign key(order_id) references orders (order_id),
     item_id int,
-    foreign key(item_id) references inventory (item_id),
-    quantity_sold int not null
+    foreign key(order_id) references orders (order_id), -- order_id의 외래키로 설정
+    foreign key(item_id) references inventory (item_id), -- item_id의 외래키로 설정
+    quantity_sold int not null -- 판매된 수량
 );
 
 -- daily_sales 테이블 생성

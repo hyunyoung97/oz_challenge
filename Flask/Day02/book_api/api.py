@@ -61,5 +61,6 @@ class Book(MethodView):
         # 특정 책을 삭제
         if index < 0 or index >= len(books):  # 책이 없으면 오류를 반환
             abort(404, message="책을 찾을 수 없습니다.")
-        books.pop(index)  # 책을 삭제
-        return ""  # 삭제 후 아무 내용도 반환하지않음
+        # 책을 삭제
+        books.pop(index)  # pop() 함수를 사용해 리스트에서 index 위치의 값을 꺼내면서 삭제
+        return ''  # 삭제 후 아무 내용도 반환하지않음
